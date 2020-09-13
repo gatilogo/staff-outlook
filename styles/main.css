@@ -23,11 +23,6 @@
 
 /***** HTML ELEMENT SELECTORS *****/
 
-body {
-    margin: 0 auto;
-    font-family: Barlow-Regular;
-}
-
 nav {
     background-color: var(--primary-color);
     height: var(--nav-height);
@@ -46,10 +41,6 @@ nav > a {
     margin: 0 2.5rem;
     text-decoration: none;
 }
-
-/*section {
-    height: calc(100vh - var(--nav-height));
-}*/
 
 /*:target::before {
     content: "";
@@ -73,12 +64,6 @@ nav > a {
     top: 80%;
     left: 28%;
     padding-bottom: 1.5em;
-}
-
-#staff-outlook-info,
-#features,
-#benefits {
-    padding: 60px 110px;
 }
 
 #staff-outlook-info .left {
@@ -143,43 +128,8 @@ nav > a {
     margin-right: 1rem;
 }
 
-#features,
-#benefits {
+#features {
     text-align: center;
-}
-
-#benefits {
-    background-image: url('../images/rectangle-background.png');
-    background-position: right bottom 10%;
-    background-repeat: no-repeat;
-    background-size: 70em 45em;
-}
-
-/*#benefits .children-row img {
-    width: 22rem;
-    height: 15rem;
-    object-fit: fill;
-}*/
-
-#benefits > div > div > img {
-    width: 22rem;
-    height: 15rem;
-    object-fit: fill;
-}
-
-/*#benefits .children-row > div {
-    margin: 2rem;
-}*/
-
-#benefits > div > div {
-    margin: 2rem;
-    text-align: center;
-    flex: 1 1 calc(33.33% - 4rem);
-}
-
-#benefits p {
-    color: white;
-    font-size: 2rem;
 }
 
 #contact {
@@ -229,10 +179,6 @@ nav > a {
     height: calc(100vh - var(--nav-height));
 }
 
-.dark {
-    background-color: var(--dark);
-}
-
 .btn {
     color: var(--dirty-white);
     background-color: var(--taupe);
@@ -256,37 +202,8 @@ nav > a {
     display: flex;
 }
 
-.blue-heading {
-    color: var(--primary-color);
-    font-size: 60px;
-    font-family: Barlow-ExtraBold;
-}
-
-.blue-heading-small {
-    color: var(--primary-color);
-    font-size: 40px;
-    font-family: Barlow-ExtraBold;
-}
-
-.blue-heading-large {
-    color: var(--primary-color);
-    font-size: 80px;
-    font-family: Barlow-ExtraBold;
-}
-
 .full-image-size {
     width: 100%;
-    height: auto;
-}
-
-.heading-w-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo {
-    width: 100px;
     height: auto;
 }
 
@@ -300,4 +217,77 @@ nav > a {
     #features ul {
         display: none;
     }
+}
+
+
+body {
+    margin: 0;
+    font-family: Barlow-Regular;
+}
+
+#benefits {
+    background-image: url('../images/rectangle-background.png');
+    background-position: right bottom 1em;
+    background-repeat: no-repeat;
+    background-size: 70em 40em;
+}
+
+#benefits .flex img {
+    width: 15em;
+    height: 10em;
+    object-fit: fill;
+}
+
+#benefits .flex > div {
+    margin: 2em;
+    text-align: center;
+    flex: 1 1 calc(33.33% - 4em);
+}
+
+#benefits p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.blue-heading,
+.blue-heading-small,
+.blue-heading-large {
+    color: var(--primary-color);
+    font-family: Barlow-ExtraBold;
+}
+
+.blue-heading {
+    font-size: 3.75rem;
+}
+
+.blue-heading-small {
+    font-size: 2.5rem;
+}
+
+.blue-heading-large {
+    font-size: 5rem;
+}
+
+.dark {
+    background-color: var(--dark);
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heading-w-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 6em;
+    height: auto;
+}
+
+.section-padding {
+    padding: 3.75em 7em;
 }
