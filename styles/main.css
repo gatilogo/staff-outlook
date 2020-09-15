@@ -1,10 +1,10 @@
 :root {
-    --dark: rgb(34, 33, 33);
-    --taupe: rgb(66, 61, 53);
-    --primary-color: rgb(57, 112, 171);
+    --dark: #222121;
+    --taupe: #423d35;
+    --primary-color: #3970ab;
     --secondary-color: #1493df;
-    --dirty-white: rgb(230, 230, 230);
-    --nav-height: 69px;
+    --dirty-white: #f2f2f2;
+    --nav-height: 75px;
 }
 
 @font-face {
@@ -24,130 +24,6 @@
 
 /***** HTML ELEMENT SELECTORS *****/
 
-nav {
-    background-color: var(--primary-color);
-    height: var(--nav-height);
-    text-align: right;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    box-sizing: border-box;
-    padding: 1.25rem;
-}
-
-nav > a {
-    color: whitesmoke;
-    margin: 0 2.5rem;
-    text-decoration: none;
-}
-
-/*:target::before {
-    content: "";
-    display: block;
-    height: 65px;
-    margin: -65px 0 0;
-}*/
-
-/***** CUSTOM ID SELECTORS *****/
-
-#staff-outlook-main {
-    position: absolute;
-    top: 40%;
-    width: 70%;
-}
-
-#staff-outlook-main span {
-    color: white;
-    font-size: 2.5vw;
-    position: relative;
-    top: 80%;
-    left: 28%;
-    padding-bottom: 1.5em;
-}
-
-#staff-outlook-info .left {
-    font-size: 40px;
-    padding: 20px;
-    width: 55%;
-}
-
-#staff-outlook-info .left ul {
-    font-size: xx-large;
-}
-
-#staff-outlook-info .right {
-    color: white;
-    font-size: 48px;
-    text-align: center;
-    padding: 20px;
-    width: 45%;
-}
-
-#staff-outlook-info .right img {
-    box-sizing: border-box;
-    padding: 4rem;
-}
-
-#features {
-    background: linear-gradient(to bottom, var(--dark) 50%, lightgray 50%);
-    text-align: center;
-}
-
-#features ul {
-    display: inline-block;
-    vertical-align: top;
-}
-
-#features ul li {
-    background-color: var(--primary-color);
-    border-radius: 80px;
-    color: lightgray;
-    list-style-type: none;
-    margin: 1.5rem;
-    font-size: large;
-    width: 25em;
-    height: 7em;
-    display: flex;
-    align-items: center;
-    font-family: Barlow-Bold;
-    padding: 1rem;
-}
-
-#features img {
-    width: 7rem;
-    height: 7rem;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-/***** CUSTOM CLASS SELECTORS *****/
-
-.cover {
-    background-image: url('../images/building-skyline.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center 90%;
-    height: calc(100vh - var(--nav-height));
-}
-
-.full-image-size {
-    width: 100%;
-    height: auto;
-}
-
-/***** MOBILE STYLING *****/
-
-@media screen and (max-width: 1100px) { /*TODO: make pretty navbar on mobile*/
-    nav a {
-        display: none;
-    }
-}
-
-/***** HTML ELEMENT SELECTORS *****/
-
 html {
     font-size: 16px;
 }
@@ -155,6 +31,18 @@ html {
 body {
     margin: 0;
     font-family: Barlow-Regular;
+}
+
+nav {
+    background-color: var(--primary-color);
+    height: var(--nav-height);
+    text-align: right;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1.25rem 1.5rem;
 }
 
 /***** CUSTOM ID SELECTORS *****/
@@ -166,22 +54,22 @@ body {
     background-size: 70em 40em;
 }
 
-#benefits .flex img {
-    width: 15em;
-    height: 10em;
-    object-fit: fill;
-}
+    #benefits .flex img {
+        width: 15em;
+        height: 10em;
+        object-fit: fill;
+    }
 
-#benefits .flex > div {
-    margin: 2em;
-    text-align: center;
-    flex: 1 1 calc(33.33% - 4em);
-}
+    #benefits .flex > div {
+        margin: 2em;
+        text-align: center;
+        flex: 1 1 calc(33.33% - 4em);
+    }
 
-#benefits p {
-    color: white;
-    font-size: 1.5rem;
-}
+    #benefits p {
+        color: white;
+        font-size: 1.5rem;
+    }
 
 #contact > div {
     width: 50%;
@@ -199,10 +87,75 @@ body {
 
 #contact,
 #features ul li,
-.children-row {
+#staff-outlook-info {
     flex-direction: row;
     box-sizing: border-box;
     display: flex;
+}
+
+#features {
+    background: linear-gradient(to bottom, var(--dark) 50%, lightgray 50%);
+    text-align: center;
+}
+
+    #features ul {
+        display: inline-block;
+    }
+
+        #features ul li {
+            background-color: var(--primary-color);
+            border-radius: 80px;
+            color: lightgray;
+            list-style-type: none;
+            margin: 1.5rem;
+            font-size: large;
+            width: 25em;
+            height: 7em;
+            display: flex;
+            align-items: center;
+            font-family: Barlow-Bold;
+            padding: 1rem;
+        }
+
+    #features img {
+        width: 6em;
+        height: 6em;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+#staff-outlook-container {
+    position: absolute;
+    top: 40%;
+    width: 70%;
+}
+
+    #staff-outlook-container span {
+        color: white;
+        font-size: 2.5vw;
+        position: relative;
+        top: 80%;
+        left: 28%;
+        padding-bottom: 1.5em;
+    }
+
+#staff-outlook-info .left {
+    font-size: 2rem;
+    padding: 1.5rem;
+    width: 55%;
+}
+
+    #staff-outlook-info .left ul {
+        font-size: 1.75rem;
+    }
+
+#staff-outlook-info .column-boxed {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 1rem;
+    width: 45%;
 }
 
 /***** CUSTOM CLASS SELECTORS *****/
@@ -246,13 +199,35 @@ body {
     display: flex;
 }
 
+.contained-img-w-padding {
+    box-sizing: border-box;
+    padding: 4rem;
+}
+
+.cover {
+    background-image: url('../images/building-skyline.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center 90%;
+    height: calc(100vh - var(--nav-height));
+}
+
 .dark {
     background-color: var(--dark);
+}
+
+.display-block {
+    display: block;
 }
 
 .flex {
     display: flex;
     flex-wrap: wrap;
+}
+
+.full-img-size {
+    width: 100%;
+    height: auto;
 }
 
 .email {
@@ -284,18 +259,49 @@ body {
     height: auto;
 }
 
+.logo-navbar {
+    float: left;
+    width: auto;
+    height: calc(var(--nav-height) - 23px);
+}
+
+.nav-right a {
+    color: whitesmoke;
+    margin: 0 2.5rem;
+    text-decoration: none;
+}
+
 .section-padding {
     padding: 3.75em 7em;
 }
 
 .section-padding-small {
-    padding: 1.5em 1.5em;
+    padding: 1.5em;
 }
 
 .white-heading {
     color: var(--dirty-white);
     font-size: 2.5rem;
     font-family: Barlow-ExtraBold;
+}
+
+@media screen and (max-width: 1450px) {
+    #staff-outlook-info {
+        flex-direction: column;
+    }
+
+        #staff-outlook-info .left,
+        #staff-outlook-info .column-boxed {
+            width: 100%;
+        }
+
+        #staff-outlook-info .column-boxed {
+            padding-bottom: 4rem;
+        }
+
+    .contained-img-w-padding {
+        padding: 5rem;
+    }
 }
 
 /***** MOBILE STYLING *****/
@@ -309,15 +315,66 @@ body {
         flex-direction: column;
     }
 
-    #contact > div {
-        width: 100%;
-    }
+        #contact > div {
+            width: 100%;
+        }
 
-    #contact .btn {
-        font-size: large;
-    }
+        #contact .btn {
+            font-size: large;
+        }
 
     .email {
         font-size: large;
+    }
+
+    .nav-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #features ul {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+        #features ul li {
+            font-size: 10px;
+            width: 22em;
+            height: 7em;
+        }
+
+    #features img {
+        width: 6em;
+        height: 6em;
+    }
+
+    .contained-img-w-padding {
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 700px) {
+    #features ul li {
+        font-size: 10px;
+    }
+}
+
+/* Galaxy Fold and other devices with similar width */
+@media screen and (max-width: 350px) {
+    #features ul li {
+        font-size: 8px;
+    }
+
+    .btn-wrapper {
+        margin: 3em 0;
+    }
+
+    .blue-heading {
+        font-size: 3rem;
+    }
+
+    .blue-heading-large {
+        font-size: 4rem;
     }
 }

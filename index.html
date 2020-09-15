@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Staff Outlook</title>
-        <link rel="icon" href="images/logo.png" />
+        <link rel="icon" href="images/logo-no-padding.png" />
         <link rel="stylesheet" type="text/css" href="styles/main.css" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="scripts/animations.js"></script>
@@ -12,25 +12,25 @@
 
     <body id="home">
         <nav>
-            <!--<div style="float: left;">
-                <a href="#home"><img src="images/logo.png" alt="" style="width: 3em; height: auto;"/></a>
-            </div>-->
-            <a href="#home">Home</a>
-            <a href="#staff-outlook-info">Staff Outlook</a>
-            <a href="#features">Features</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#contact">Contact</a>
-            <a href="#" class="btn">REQUEST DEMO</a> <!--TODO: ask Dawn about sales email-->
+            <a href="#home"><img src="images/logo-no-padding.png" alt="" class="logo-navbar" /></a>
+            <div class="nav-right">
+                <a href="#home">Home</a>
+                <a href="#staff-outlook-info">Staff Outlook</a>
+                <a href="#features">Features</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="btn">REQUEST DEMO</a> <!--TODO: add sales email-->
+            </div>
         </nav>
 
         <section class="cover">
-            <div id="staff-outlook-main" class="dark column-boxed">
-                <img class="full-image-size" src="images/logo-w-text-light.png" alt="" />
+            <div id="staff-outlook-container" class="dark column-boxed">
+                <img src="images/logo-w-text-light.png" alt="" class="full-img-size" />
                 <span>Add Strategy to your Workforce Plan</span>
             </div>
         </section>
 
-        <section id="staff-outlook-info" class="children-row section-padding">
+        <section id="staff-outlook-info" class="section-padding">
             <div class="left">
                 <span class="blue-heading">Knowing what you have today and what you need tomorrow</span>
                 <p>Strategic workforce planning is about making informed and tactical decisions that align with your organization's long term plans.</p>
@@ -40,8 +40,8 @@
                     <li>Understaffing will lead to inability to complete projects, damaging your company's reputation.</li>
                 </ul>
             </div>
-            <div class="dark column-boxed right">
-                <img class="full-image-size" src="images/crystal-ball.png" alt="" />
+            <div class="dark column-boxed">
+                <img src="images/crystal-ball.png" alt="" class="full-img-size contained-img-w-padding" />
                 <span class="blue-heading">Staff Outlook</span>
                 <span>is the crystal ball in your corner</span>
             </div>
@@ -49,7 +49,7 @@
 
         <section id="features" class="section-padding">
             <span class="blue-heading-large">FEATURES</span><br />
-            <p class="white-heading" style="margin: 0;">PEOPLE. PLANNING. PRODUCTIVITY.</p>
+            <span class="white-heading display-block">PEOPLE. PLANNING. PRODUCTIVITY.</span>
             <ul>
                 <li>
                     <img src="images/people.png" alt="" />
@@ -111,7 +111,7 @@
                     <span class="blue-heading">CONTACT</span>
                 </div>
                 <div class="btn-wrapper">
-                    <a href="#" class="btn">REQUEST DEMO</a> <!--TODO: ask Dawn about sales email-->
+                    <a href="#" class="btn">REQUEST DEMO</a> <!--TODO: add sales email-->
                 </div>
                 <img src="images/email.png" alt="" class="email-icon" />
                 <a href="mailto:info@staffoutlook.com" class="email">info@staffoutlook.com</a>
