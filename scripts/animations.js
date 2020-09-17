@@ -1,15 +1,16 @@
 $(document).ready(function () {
-    // Scroll to view on navigation menu click
+    // On navigation menu click
     $('a[href ^= "#"]').on('click', function (event) {
         event.preventDefault();
 
+        // Scroll to view
         $('html, body').animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 2000);
-    });
 
-    // Hamburger menu button animation
-    $('.menu-btn').on('click', function () {
-        $(this).toggleClass('change');
+        // Hide navigation menu if open on mobile
+        if ($('#menu-btn').prop('checked')) {
+            $('#menu-btn').prop('checked', false);
+        }
     });
 });
