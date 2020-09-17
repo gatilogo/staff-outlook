@@ -4,6 +4,7 @@
     --primary-color: #3970ab;
     --secondary-color: #1493df;
     --dirty-white: #f2f2f2;
+    --shadow: #333;
     --nav-height: 69px;
 }
 
@@ -18,8 +19,8 @@
 }
 
 @font-face {
-    font-family: Barlow-Bold;
-    src: url("../fonts/Barlow-Bold.otf") format('opentype');
+    font-family: Barlow-Medium;
+    src: url("../fonts/Barlow-Medium.otf") format('opentype');
 }
 
 /***** HTML ELEMENT SELECTORS *****/
@@ -41,11 +42,11 @@ nav {
     top: 0;
     z-index: 1;
     box-sizing: border-box;
-    padding: 1.25rem 2rem;
+    padding: 1.25rem 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 8px 6px -6px rgba(0,0,0,.5);
+    box-shadow: 0px 8px 6px -6px var(--shadow);
 }
 
 /***** CUSTOM ID SELECTORS *****/
@@ -61,7 +62,7 @@ nav {
         width: 15em;
         height: 10em;
         object-fit: fill;
-        box-shadow: 10px 8px 29px var(--primary-color);
+        box-shadow: 5px 5px 10px var(--primary-color);
     }
 
     #benefits .flex > div {
@@ -112,13 +113,14 @@ nav {
             color: lightgray;
             list-style-type: none;
             margin: 1.5rem;
-            font-size: large;
+            font-size: 1.5rem;
             width: 25em;
             height: 7em;
             display: flex;
             align-items: center;
-            font-family: Barlow-Bold;
+            font-family: Barlow-Medium;
             padding: 1rem;
+            box-shadow: 0 0 5px var(--shadow);
         }
 
     #features img {
@@ -164,6 +166,14 @@ nav {
 
 /***** CUSTOM CLASS SELECTORS *****/
 
+.border-shadow {
+    box-shadow: 0 0 20px var(--shadow);
+}
+
+.border-offset-drop-shadow {
+    box-shadow: 5px 5px 10px var(--shadow);
+}
+
 .blue-heading,
 .blue-heading-small,
 .blue-heading-large {
@@ -191,6 +201,7 @@ nav {
     text-decoration: none;
     font-family: Barlow-ExtraBold;
     font-size: x-large;
+    box-shadow: 0 0 5px var(--shadow);
 }
 
 .btn-wrapper {
@@ -205,7 +216,7 @@ nav {
 
 .contained-img-w-padding {
     box-sizing: border-box;
-    padding: 4rem;
+    padding: 4rem 4rem 2rem 4rem;
 }
 
 .cover {
@@ -273,11 +284,62 @@ nav {
     display: none;
 }
 
-.nav-right a {
-    color: whitesmoke;
-    margin: 0 2.5rem;
-    text-decoration: none;
+.nav-right {
+    list-style: none;
 }
+
+    .nav-right li {
+        display: inline-block;
+    }
+
+        .nav-right li a {
+            color: whitesmoke;
+            margin: 0 1.25rem;
+            text-decoration: none;
+            display: block;
+        }
+
+    .nav-right .hover-style {
+        color: #aaa;
+        font-family: Barlow-ExtraBold;
+        padding: 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+        .nav-right .hover-style,
+        .nav-right .hover-style:after,
+        .nav-right .hover-style:before {
+            transition: all 0.5s;
+        }
+
+            .nav-right .hover-style:after {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                width: 100%;
+                height: 1px;
+                content: '.';
+                color: transparent;
+                background: var(--dark);
+                opacity: 0;
+                z-index: -1;
+                border-radius: 5px;
+            }
+
+            .nav-right .hover-style:hover {
+                color: whitesmoke;
+            }
+
+                .nav-right .hover-style:hover:after {
+                    opacity: 1;
+                    visibility: visible;
+                    height: 100%;
+                }
 
 .section-padding {
     padding: 3.75em 7em;
@@ -316,25 +378,13 @@ nav {
         }
 
     .contained-img-w-padding {
-        padding: 5rem;
+        padding: 5rem 5rem 2.5rem 5rem;
     }
 }
 
 /***** MOBILE STYLING *****/
 
-@media screen and (max-width: 1130px) { /*TODO: make pretty navbar on mobile*/
-    html {
-        font-size: 10px;
-    }
-
-    #contact .btn {
-        font-size: large;
-    }
-
-    .email {
-        font-size: large;
-    }
-
+@media screen and (max-width: 1193px) { /*TODO: make pretty navbar on mobile*/
     .nav-right {
         display: none;
     }
@@ -365,6 +415,20 @@ nav {
     /* Rotate last bar */
     .change .bar3 {
         transform: rotate(45deg) translate(-8px, -8px);
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    html {
+        font-size: 10px;
+    }
+
+    #contact .btn {
+        font-size: large;
+    }
+
+    .email {
+        font-size: large;
     }
 }
 
