@@ -69,21 +69,12 @@ nav {
         font-size: 1.5rem;
     }
 
-#contact > div {
-    width: 50%;
-}
-
-#contact .btn {
-    font-size: xx-large;
-}
-
-#contact .column-boxed {
-    padding: 2rem;
-    margin-right: 2rem;
+#contact .flex > div {
+    margin: 2em;
     text-align: center;
+    flex: 1 1 auto;
 }
 
-#contact,
 #features ul li,
 #staff-outlook-info {
     flex-direction: row;
@@ -114,6 +105,7 @@ nav {
             font-family: Barlow-Medium;
             padding: 1rem;
             box-shadow: 0 0 5px var(--shadow);
+            text-align: left;
         }
 
     #features img {
@@ -128,7 +120,6 @@ nav {
     position: absolute;
     top: 40%;
     width: 70%;
-    background-color: var(--dark);
 }
 
     #staff-outlook-container span {
@@ -156,6 +147,7 @@ nav {
     text-align: center;
     padding: 1rem;
     width: 45%;
+    justify-content: center;
 }
 
 /***** CUSTOM CLASS SELECTORS *****/
@@ -198,10 +190,6 @@ nav {
     box-shadow: 0 0 5px var(--shadow);
 }
 
-.btn-wrapper {
-    margin: 4em;
-}
-
 .column-boxed {
     flex-direction: column;
     box-sizing: border-box;
@@ -210,7 +198,7 @@ nav {
 
 .contained-img-w-padding {
     box-sizing: border-box;
-    padding: 4rem 4rem 2rem 4rem;
+    padding: 2rem 4rem;
 }
 
 .cover {
@@ -242,27 +230,13 @@ nav {
 
 .email {
     color: var(--secondary-color);
-    font-size: xx-large;
-}
-
-.email-icon {
-    width: 4rem;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: x-large;
 }
 
 .heading-w-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.image-wrapper > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 .logo {
@@ -301,6 +275,7 @@ nav {
         padding: 15px;
         position: relative;
         z-index: 1;
+        font-size: large;
     }
 
         .nav-right .hover-style,
@@ -341,10 +316,6 @@ nav {
     padding: 3.75em 7em;
 }
 
-.section-padding-small {
-    padding: 1.5em;
-}
-
 .white-heading {
     color: var(--dirty-white);
     font-size: 2.5rem;
@@ -361,7 +332,17 @@ nav {
         }
 }
 
+@media screen and (min-width: 1451px) and (max-width: 1621px) {
+    #features ul li {
+        font-size: 1.25rem;
+    }
+}
+
 @media screen and (max-width: 1450px) {
+    #features ul li {
+        font-size: 1rem;
+    }
+
     #staff-outlook-info {
         flex-direction: column;
     }
@@ -376,7 +357,33 @@ nav {
         }
 
     .contained-img-w-padding {
-        padding: 5rem 5rem 2.5rem 5rem;
+        padding: 2.5rem 5rem;
+    }
+}
+
+@media screen and (max-width: 1221px) {
+    #features ul {
+        display: block;
+    }
+
+        #features ul li {
+            margin: 2em auto;
+            font-size: 2rem;
+            border-radius: 120px;
+        }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1193px) {
+    #staff-outlook-info .column-boxed {
+        font-size: 4rem;
+    }
+
+        #staff-outlook-info .column-boxed .blue-heading {
+            font-size: 7rem;
+        }
+
+    .contained-img-w-padding {
+        padding: 7rem 7rem 2.5rem 7rem;
     }
 }
 
@@ -406,7 +413,7 @@ nav {
             height: 2px;
             position: relative;
             transition: background .2s ease-out;
-            width: 20px;
+            width: 25px;
         }
 
             .menu-icon span:before,
@@ -421,28 +428,27 @@ nav {
             }
 
             .menu-icon span:before {
-                top: 6px;
+                top: 7px;
             }
 
             .menu-icon span:after {
-                top: -6px;
+                top: -7px;
             }
 
     .menu-btn:checked ~ .nav-right {
-        max-height: 20em;
+        max-height: 50em;
         padding: 0 2em 1em 2em;
         text-align: center;
-        font-size: large;
     }
 
         .menu-btn:checked ~ .nav-right li {
-            margin-bottom: 0.5em;
+            margin-bottom: 1em;
         }
 
-        /* Second bar */
-        .menu-btn:checked ~ .menu-icon span {
-            background: transparent;
-        }
+    /* Second bar */
+    .menu-btn:checked ~ .menu-icon span {
+        background: transparent;
+    }
 
         /* First bar */
         .menu-btn:checked ~ .menu-icon span:before {
@@ -458,40 +464,11 @@ nav {
     .menu-btn:checked ~ .menu-icon:not(.steps) span:after {
         top: 0;
     }
-
-/*    #staff-outlook-container {
-        position: absolute;
-        top: 20%;
-        width: 100%;
-        background-color: transparent;
-    }
-
-        #staff-outlook-container span {
-            color: var(--dark);
-        }*/
 }
 
 @media screen and (max-width: 1130px) {
     html {
         font-size: 10px;
-    }
-
-    #contact .btn {
-        font-size: large;
-    }
-
-    #features ul {
-        display: block;
-    }
-
-        #features ul li {
-            margin: 2em auto;
-            font-size: 2rem;
-            border-radius: 120px;
-        }
-
-    .email {
-        font-size: large;
     }
 }
 
@@ -511,17 +488,13 @@ nav {
         flex-direction: column;
     }
 
-        #contact > div {
-            width: 100%;
-        }
-
     #features ul {
         margin-left: 0;
         padding-left: 0;
     }
 
         #features ul li {
-            font-size: 12px;
+            font-size: 13px;
             width: 22em;
             height: 7em;
         }
@@ -529,6 +502,16 @@ nav {
     #features img {
         width: 6em;
         height: 6em;
+    }
+
+    #staff-outlook-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cover {
+        background-attachment: local;
+        height: 60vh;
     }
 
     .contained-img-w-padding {
@@ -544,10 +527,6 @@ nav {
 @media screen and (max-width: 350px) {
     #features ul li {
         font-size: 10px;
-    }
-
-    .btn-wrapper {
-        margin: 3em 0;
     }
 
     .blue-heading {
