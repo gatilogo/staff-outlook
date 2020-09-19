@@ -111,6 +111,7 @@ nav {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        box-sizing: border-box;
     }
 
 /***** CUSTOM CLASS SELECTORS *****/
@@ -223,7 +224,7 @@ nav {
     .hover,
     .hover:after,
     .hover:before {
-        transition: all 0.5s;
+        transition: all 0.3s;
     }
 
         .hover:after {
@@ -241,7 +242,7 @@ nav {
             background: var(--dark);
             opacity: 0;
             z-index: -1;
-            border-radius: 5px;
+            border-radius: 50px;
         }
 
         .hover:hover {
@@ -414,8 +415,8 @@ nav {
             }
 
     .menu-btn:checked ~ .menu {
-        max-height: 55rem;
-        padding: 0 2em 1em 2em;
+        max-height: 60rem;
+        padding: 0 7em 1em 7em;
         text-align: center;
     }
 
