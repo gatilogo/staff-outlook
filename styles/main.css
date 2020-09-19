@@ -5,7 +5,7 @@
     --secondary-color: #1493df;
     --dirty-white: #f2f2f2;
     --shadow: #333;
-    --nav-height: 69px;
+    --nav-height: 70px;
 }
 
 @font-face {
@@ -24,10 +24,6 @@
 }
 
 /***** HTML ELEMENT SELECTORS *****/
-
-html {
-    font-size: 16px;
-}
 
 body {
     margin: 0;
@@ -51,40 +47,17 @@ nav {
     background-size: 70em 40em;
 }
 
-    #benefits .flex img {
-        width: 15em;
-        height: 10em;
-        object-fit: fill;
-        box-shadow: 5px 5px 10px var(--primary-color);
-    }
-
-    #benefits .flex > div {
-        margin: 2em;
-        text-align: center;
+    #benefits .flex-wrap > div {
         flex: 1 1 calc(33.33% - 4em);
     }
 
-    #benefits p {
-        color: white;
-        font-size: 1.5rem;
-    }
-
-#contact .flex > div {
+/*#contact .flex > div {
     margin: 2em;
-    text-align: center;
     flex: 1 1 auto;
-}
-
-#features ul li,
-#staff-outlook-info {
-    flex-direction: row;
-    box-sizing: border-box;
-    display: flex;
-}
+}*/
 
 #features {
     background: linear-gradient(to bottom, var(--dark) 50%, lightgray 50%);
-    text-align: center;
 }
 
     #features ul {
@@ -93,62 +66,57 @@ nav {
 
         #features ul li {
             background-color: var(--primary-color);
-            border-radius: 80px;
+            border-radius: 100px;
             color: lightgray;
             list-style-type: none;
             margin: 1.5rem;
-            font-size: 1.5rem;
-            width: 25em;
+            width: 23em;
             height: 7em;
             display: flex;
             align-items: center;
             font-family: Barlow-Medium;
-            padding: 1rem;
+            padding: 0 1rem;
             box-shadow: 0 0 5px var(--shadow);
             text-align: left;
         }
 
-    #features img {
-        width: 6em;
-        height: 6em;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-right: 1rem;
-    }
+        #features ul img {
+            width: 6em;
+            height: 6em;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
 
 #staff-outlook-container {
     position: absolute;
     top: 40%;
-    width: 70%;
+    width: 60%;
+    padding: 2em 5em 3em 2em;
 }
 
-    #staff-outlook-container span {
-        color: white;
-        font-size: 2.5vw;
-        position: relative;
-        top: 80%;
-        left: 28%;
-        padding-bottom: 1.5em;
+    #staff-outlook-container table td {
+        padding: 0 1.5rem;
     }
 
-#staff-outlook-info .left {
-    font-size: 2rem;
-    padding: 1.5rem;
-    width: 55%;
+#staff-outlook-info {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
 }
 
-    #staff-outlook-info .left ul {
-        font-size: 1.75rem;
+    #staff-outlook-info div:first-child {
+        padding: 1.5rem;
+        width: 55%;
     }
 
-#staff-outlook-info .column-boxed {
-    color: white;
-    font-size: 2.5rem;
-    text-align: center;
-    padding: 1rem;
-    width: 45%;
-    justify-content: center;
-}
+    #staff-outlook-info div:last-child {
+        padding: 1rem;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
 /***** CUSTOM CLASS SELECTORS *****/
 
@@ -160,23 +128,9 @@ nav {
     box-shadow: 5px 5px 10px var(--shadow);
 }
 
-.blue-heading,
-.blue-heading-small,
-.blue-heading-large {
+.blue-heading {
     color: var(--primary-color);
     font-family: Barlow-ExtraBold;
-}
-
-.blue-heading {
-    font-size: 3.75rem;
-}
-
-.blue-heading-small {
-    font-size: 2.5rem;
-}
-
-.blue-heading-large {
-    font-size: 5rem;
 }
 
 .btn {
@@ -190,17 +144,6 @@ nav {
     box-shadow: 0 0 5px var(--shadow);
 }
 
-.column-boxed {
-    flex-direction: column;
-    box-sizing: border-box;
-    display: flex;
-}
-
-.contained-img-w-padding {
-    box-sizing: border-box;
-    padding: 2rem 4rem;
-}
-
 .cover {
     background-image: url('../images/building-skyline.png');
     background-size: cover;
@@ -210,17 +153,45 @@ nav {
     padding-top: var(--nav-height);
 }
 
+.center {
+    text-align: center;
+}
+
 .dark {
     background-color: var(--dark);
 }
 
-.display-block {
-    display: block;
-}
-
-.flex {
+.flex-wrap {
     display: flex;
     flex-wrap: wrap;
+}
+
+    .flex-wrap > * {
+        margin: 2em;
+    }
+
+.fs-lg {
+    font-size: 1.75rem;
+}
+
+.fs-med {
+    font-size: 1.5rem;
+}
+
+.fs-sm {
+    font-size: 1.25rem;
+}
+
+.fs-heading-lg {
+    font-size: 5rem;
+}
+
+.fs-heading-med {
+    font-size: 3.75rem;
+}
+
+.fs-heading-sm {
+    font-size: 2.5rem;
 }
 
 .full-img-size {
@@ -230,7 +201,6 @@ nav {
 
 .email {
     color: var(--secondary-color);
-    font-size: x-large;
 }
 
 .heading-w-logo {
@@ -239,7 +209,60 @@ nav {
     justify-content: center;
 }
 
-.logo {
+.hover {
+    color: #aaa;
+    font-family: Barlow-ExtraBold;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    font-size: large;
+}
+
+    .hover,
+    .hover:after,
+    .hover:before {
+        transition: all 0.5s;
+    }
+
+        .hover:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            height: 1px;
+            content: '.';
+            color: transparent;
+            background: var(--dark);
+            opacity: 0;
+            z-index: -1;
+            border-radius: 5px;
+        }
+
+        .hover:hover {
+            color: var(--dirty-white);
+        }
+
+            .hover:hover:after {
+                opacity: 1;
+                visibility: visible;
+                height: 100%;
+            }
+
+.img-padding {
+    box-sizing: border-box;
+    padding: 2rem 4rem;
+}
+
+.logo-med {
+    width: 7em;
+    height: auto;
+}
+
+.logo-sm {
     width: 6em;
     height: auto;
 }
@@ -255,143 +278,82 @@ nav {
     display: none;
 }
 
-.nav-right {
+.menu {
     list-style: none;
     overflow: hidden;
     clear: none;
     max-height: none;
 }
 
-    .nav-right li a {
-        color: whitesmoke;
+    .menu li a {
         margin: 0 1.25rem;
         text-decoration: none;
         display: block;
     }
 
-    .nav-right .hover-style {
-        color: #aaa;
-        font-family: Barlow-ExtraBold;
-        padding: 15px;
-        position: relative;
-        z-index: 1;
-        font-size: large;
-    }
-
-        .nav-right .hover-style,
-        .nav-right .hover-style:after,
-        .nav-right .hover-style:before {
-            transition: all 0.5s;
-        }
-
-            .nav-right .hover-style:after {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                margin: auto;
-                width: 100%;
-                height: 1px;
-                content: '.';
-                color: transparent;
-                background: var(--dark);
-                opacity: 0;
-                z-index: -1;
-                border-radius: 5px;
-            }
-
-            .nav-right .hover-style:hover {
-                color: whitesmoke;
-            }
-
-                .nav-right .hover-style:hover:after {
-                    opacity: 1;
-                    visibility: visible;
-                    height: 100%;
-                }
-
 .section-padding {
     padding: 3.75em 7em;
 }
 
+.small-img-w-shadow {
+    width: 15em;
+    height: 10em;
+    object-fit: fill;
+    box-shadow: 5px 5px 10px var(--primary-color);
+}
+
 .white-heading {
     color: var(--dirty-white);
-    font-size: 2.5rem;
     font-family: Barlow-ExtraBold;
 }
 
+.white-text {
+    color: white;
+}
+
 @media screen and (min-width: 1193px) {
-    .nav-right {
+    .menu {
         float: right;
     }
 
-        .nav-right li {
+        .menu li {
             float: left;
         }
 }
 
-@media screen and (min-width: 1451px) and (max-width: 1621px) {
-    #features ul li {
-        font-size: 1.25rem;
-    }
-}
-
-@media screen and (max-width: 1450px) {
-    #features ul li {
-        font-size: 1rem;
-    }
-
-    #staff-outlook-info {
-        flex-direction: column;
-    }
-
-        #staff-outlook-info .left,
-        #staff-outlook-info .column-boxed {
-            width: 100%;
-        }
-
-        #staff-outlook-info .column-boxed {
-            padding-bottom: 4rem;
-        }
-
-    .contained-img-w-padding {
-        padding: 2.5rem 5rem;
-    }
-}
-
-@media screen and (max-width: 1221px) {
+@media screen and (max-width: 1387px) {
     #features ul {
         display: block;
+        margin-left: 0;
+        padding-left: 0;
     }
 
         #features ul li {
             margin: 2em auto;
-            font-size: 2rem;
-            border-radius: 120px;
         }
-}
-
-@media screen and (min-width: 900px) and (max-width: 1193px) {
-    #staff-outlook-info .column-boxed {
-        font-size: 4rem;
-    }
-
-        #staff-outlook-info .column-boxed .blue-heading {
-            font-size: 7rem;
-        }
-
-    .contained-img-w-padding {
-        padding: 7rem 7rem 2.5rem 7rem;
-    }
 }
 
 /***** MOBILE STYLING *****/
 
-/* Navigation bar*/
-@media screen and (max-width: 1193px) {
-    .nav-right {
+@media screen and (max-width: 1192px) {
+    #staff-outlook-info {
+        flex-direction: column;
+    }
+
+        #staff-outlook-info div:first-child,
+        #staff-outlook-info div:last-child {
+            width: 100%;
+        }
+
+        #staff-outlook-info div:last-child {
+            padding-bottom: 3rem;
+        }
+    
+    .logo-navbar {
+        margin: 1.5rem 0 0 2.5rem;
+    }
+
+    .menu {
         clear: both;
         max-height: 0;
         transition: max-height .2s ease-out;
@@ -399,12 +361,11 @@ nav {
 
     .menu-icon {
         cursor: pointer;
-        display: inline-block;
-        padding: 2.5rem 2rem;
-        position: relative;
+        display: block;
+        padding: 2.5rem;
         user-select: none;
         float: right;
-        margin: 1rem 1.5rem 0 0;
+        margin-right: 1.5rem;
     }
 
         .menu-icon span {
@@ -412,7 +373,6 @@ nav {
             display: block;
             height: 2px;
             position: relative;
-            transition: background .2s ease-out;
             width: 25px;
         }
 
@@ -435,13 +395,13 @@ nav {
                 top: -7px;
             }
 
-    .menu-btn:checked ~ .nav-right {
-        max-height: 50em;
+    .menu-btn:checked ~ .menu {
+        max-height: 55rem;
         padding: 0 2em 1em 2em;
         text-align: center;
     }
 
-        .menu-btn:checked ~ .nav-right li {
+        .menu-btn:checked ~ .menu li {
             margin-bottom: 1em;
         }
 
@@ -464,48 +424,22 @@ nav {
     .menu-btn:checked ~ .menu-icon:not(.steps) span:after {
         top: 0;
     }
-}
 
-@media screen and (max-width: 1130px) {
-    html {
-        font-size: 10px;
+    .section-padding {
+        padding: 3.75em;
     }
 }
 
-/* For tablets */
-@media screen and (min-width: 700px) and (max-width: 1130px) {
-    #staff-outlook-info .column-boxed {
-        font-size: 3rem;
+@media screen and (min-width: 611px) and (max-width: 1070px) {
+    #staff-outlook-container .fs-lg {
+        font-size: 1.25rem;
     }
-
-        #staff-outlook-info .column-boxed .blue-heading {
-            font-size: 6rem;
-        }
 }
 
-@media screen and (max-width: 700px) {
-    #contact {
-        flex-direction: column;
-    }
-
-    #features ul {
-        margin-left: 0;
-        padding-left: 0;
-    }
-
-        #features ul li {
-            font-size: 13px;
-            width: 22em;
-            height: 7em;
-        }
-
-    #features img {
-        width: 6em;
-        height: 6em;
-    }
-
+@media screen and (max-width: 610px) {
     #staff-outlook-container {
         width: 100%;
+        box-sizing: border-box;
         overflow: hidden;
     }
 
@@ -513,27 +447,54 @@ nav {
         background-attachment: local;
         height: 60vh;
     }
+}
 
-    .contained-img-w-padding {
-        padding: 1rem;
-    }
-
-    .section-padding {
-        padding: 3.75em;
+@media screen and (min-width: 392px) and (max-width: 1192px) {
+    .logo-navbar {
+        height: calc(var(--nav-height) - 15px);
     }
 }
 
-/* Galaxy Fold and other devices with similar width */
-@media screen and (max-width: 350px) {
-    #features ul li {
+@media screen and (min-width: 611px) and (max-width: 1192px) {
+    .menu-icon {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 392px) and (max-width: 610px) {
+    html {
         font-size: 10px;
     }
 
-    .blue-heading {
-        font-size: 3rem;
+    .menu-icon {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 308px) and (max-width: 391px) {
+    html {
+        font-size: 8px;
     }
 
-    .blue-heading-large {
-        font-size: 4rem;
+    .logo-navbar {
+        height: calc(var(--nav-height) - 25px);
+    }
+
+    .menu-icon {
+        margin-top: 2.25rem;
+    }
+}
+
+@media screen and (max-width: 307px) {
+    html {
+        font-size: 6px;
+    }
+
+    .logo-navbar {
+        height: calc(var(--nav-height) - 30px);
+    }
+
+    .menu-icon {
+        margin-top: 2.75rem;
     }
 }
